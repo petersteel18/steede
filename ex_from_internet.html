@@ -1,0 +1,150 @@
+<!DOCTYPE HTML5>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Diogo Alfredo Cabaça Umba || Peter Steel Man Hardy">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width", initial-scale="1.0">
+		<title>Exercíco nº7</title>
+		<style>
+			body{
+				margin:0px;
+				padding:0px;
+				font:12pt serif;
+				}
+			#header{
+				font-size:20pt;
+				}
+			header{
+				display:block;
+				}
+			.section{
+				width:320px;
+				height:150px;
+				}
+			#foot1,header{
+				font-style:italic;
+				padding:5px;
+				text-align:center;
+				margin-top:5px;
+				}
+			#foot2{
+				display:block;
+				text-shadow:3px 3px 8px #888;
+				}
+			sup{
+				font:5pt aril;
+				}
+			#botao,body{
+				background-color:rgb(235,176,89);
+				color:#00f;
+				}
+			#botao,#num{
+				border:4px groove rgb(235,176,89);
+				border-radius:6px;
+				}
+			aside{
+				float:right;
+				position:absolute;
+				top:50px;
+				left:350;
+				display:inline;
+				}
+			#contact,#botao,#bio{
+				display:inline-block;
+				}
+			aside,.section{
+				box-shadow:3px 3px 9px #999;
+				padding:5px;
+				border:2px groove #fff;
+				border-radius:10px;
+				background-color:#fff;
+				}
+			a{
+				color:rgb(235,176,89);
+				}
+			#num{
+			
+				}
+			aside,.conteiner{
+				width:auto;
+				height:150px;
+				}
+			.spanheader{
+				text-shadow:3px 3px 8px #999;
+			}
+			aside,.section{
+				resize:vertical;
+				overflow:auto;
+			}
+			#res,#texto,a{
+				text-shadow:2px 2px 9px #999;
+				}				
+		</style>
+	</head>
+	<body id="conteiner">
+		<div class="conteiner">
+			<div class="header">
+				<header>
+					<div id="header">
+						<span class="spanheader">Exercício nº7</span>
+					</div>	
+				</header>
+			</div>
+			<div class="section">
+				<section>
+					<div id="caixa">
+						<span id="texto">Digite um número menor ou igual à vinte</span>
+						<span id="input_n">
+							<input type="number" name="num" id="num" size="10" maxlength="3">
+						</span>
+						<span id="input_b">
+							<input type="button" value="analizar" onclick="analize()" id="botao">
+						</span>
+					</div>
+					<div class="res">
+						<span id="res">Analizando o número digitado ...</span>
+					</div>
+				</section>
+			</div>
+			<div class="foot">
+				<footer>
+					<div id="foot1">
+						<span id="foot2">&copy;FastUniversal <sup>Peter Steel</sup></span>
+						<aside>
+							<span id="creator">Essa página foi desenvolvida por <span id="bio"><a href="#" target="_blank" >Diogo Alfredo Cabaça Umba</a></span></span>
+							<span>Poderá entrar em contacto comigo através das minhas <span id="contact"><a href="#" target="_blank" >redes sóciais</a></span> ou até ligar para o seguite contacto:<span id="contact"><a href="Dálcia.html" target="_blank">928 519 409</a></span> para eventuais serviços</span>
+						</aside>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script>
+			let vector=[]
+			vector[0]=document.getElementById('num')
+			vector[1]=document.getElementById('res')
+			vector[2]=document.getElementById('conteiner')
+			function analize(){
+				if(vector[0].value.length==0 || vector[0].value<0 || vector[0].value>20){
+					window.alert("[Erro] valor invalido")
+					vector[1].innerText="Não foi possível analizar"
+					vector[1].style.color='#f00'
+					vector[2].style.backgroundColor='#f00'
+				}else{
+					if(vector[0].value>=10 && vector[0].value<14){
+						vector[1].innerText=vector[0].value + " é um bom valor"	
+						vector[1].style.color='#00f'
+						vector[2].style.backgroundColor='rgb(235,176,89)'
+					}else if(vector[0].value>=14){
+						vector[1].innerText=vector[0].value +" é um valor muito bom"
+						vector[1].style.color='#00f'
+						vector[2].style.backgroundColor='rgb(235,176,89)'
+					}else{
+						vector[1].innerText=vector[0].value + " é um valor insuficiente"
+						vector[1].style.color='#f00'
+						vector[2].style.backgroundColor='#f00'
+					}
+				}
+			}	
+		</script>
+	</body>
+</html>

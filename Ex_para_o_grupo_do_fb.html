@@ -1,0 +1,163 @@
+<!--Faça 4 caixas de texto em html que vão receber 4 números digitados pelo usuários, esteliza com CSS,cria também um botão que ao ser clicado chame uma função em Javascript que vair somar os dois primeiros números, depois multiplica pelo terceiro  e depois divide pelo quarto. Também deves incluir no Javascript uma condição que quando pelo menos uma das caixas de texto estiver vazia para ele mostrar uma mensagem de erro e trocar a cor de fundo da página, caso a condição seja falsa ele apenas vai manter a cor da página -->
+<!doctype html5>
+<html lang="pt">
+	<head>
+		<meta name="author" content="Diogo Alfredo Cabaça Umba || Peter Steel Man Hardy">
+		<meta charset="uft-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width", initial-scale="1.0">
+		<title>Desafio nº1</title>
+		<style >
+			body{
+				margin:0px;
+				padding:0px;
+				font:12pt serif;
+				}
+			#header{
+				font-size:20pt;
+				}
+			header{
+				display:block;
+				}
+			#section{
+				width:320px;
+				height:auto;
+				}
+			#foot1,header{
+				font-style:italic;
+				padding:5px;
+				text-align:center;
+				margin-top:5px;
+				}
+			#foot2{
+				display:block;
+				text-shadow:3px 3px 8px #888;
+				}
+			sup{
+				font:5pt aril;
+				}
+			#botao2,body{
+				background-color:rgb(235,176,89);
+				color:#00f;
+				}
+			#botao2{
+				border:4px groove rgb(235,176,89);
+				border-radius:6px;
+				width:200px;
+				}
+			aside{
+				float:right;
+				position:absolute;
+				top:50px;
+				left:350;
+				display:inline;
+				}
+			#contact,#botao,#bio{
+				display:inline-block;
+				}
+			aside,#section{
+				box-shadow:3px 3px 9px #999;
+				padding:5px;
+				border:2px groove #fff;
+				border-radius:10px;
+				background-color:#fff;
+				}
+			a{
+				color:rgb(235,176,89);
+				}
+			aside,#page{
+				width:auto;
+				height:150px;
+				}
+			.spanheader{
+				text-shadow:3px 3px 8px #999;
+				}
+			aside,#section{
+				resize:both;
+				overflow:auto;
+				}
+			#res,#num,a{
+				text-shadow:2px 2px 9px #999;
+				}
+			.nr1,.nr2,.nr3,.nr4{
+				padding:0px;
+				}
+			#botao{
+				padding:0px;
+				}
+		</style>
+		<script>
+			let n=[]
+			function calcular(){
+				n[1]=document.getElementById('n1')
+				n[2]=document.getElementById('n2')
+				n[3]=document.getElementById('n3')
+				n[4]=document.getElementById('n4')
+				n[5]=document.getElementById('res')
+				n[6]=document.getElementById('conteiner')
+				if(n[1].value.length==0 || n[2].value.length==0 || n[3].value.length==0 || n[4].value.length==0){
+					window.alert("[ERRO] as caixas de texto não podem estar vazias")
+					n[5].innerText='Impossível calcular'
+					n[5].style.color='#f00'
+					n[6].style.background='#f00'
+				}else{
+					n[7]=((Number(n[1].value)+Number(n[2].value))*Number(n[3].value))/Number(n[4].value)
+					n[5].innerText="O resultado é : " + n[7]
+					n[5].style.color="#00f"
+					n[6].style.background='rgb(235,176,89)'
+				}
+			}
+			function inicia(){
+				n[0]=document.getElementById('botao2')
+				n[0].addEventListener('click',calcular)
+			}
+			window.addEventListener('load',inicia)
+		</script>
+	</head>
+	<body id="conteiner">
+		<div id="page">
+			<div id="header">
+				<header>
+					<span class="spanheader">Algebra</span>
+				</header>
+			</div>
+			<div id="section">
+				<section>
+					<div class="nr1">
+						<span id="num">Digite o primeiro número</span>
+						<input id="n1" name="num1" type="number" autocomplete="on" autocorrect="off">
+					</div>
+					<div class="nr2">
+						<span id="num">Digite o segundo número</span>
+						<input id="n2" name="num2" type="number" autocomplete="on" autocorrect="off">
+					</div>
+					<div class="nr3">
+						<span id="num">Digite o terceiro número</span>
+						<input id="n3" name="num3" type="number" autocomplete="on" autocorrect="off">
+					</div>
+					<div class="nr4">
+						<span id="num">Digite o quarto número</span>
+						<input id="n4" name="num4" type="number" autocomplete="on" autocorrect="off">
+					</div>
+					<div id="botao">
+						<input type="button" id="botao2" name="botao" value="Calcular">
+					</div>
+					<div id="res">
+						<span>O resultado vem aqui...</span>
+					</div>
+				</section>
+			</div>
+			<div class="foot">
+				<footer>
+					<div id="foot1">
+						<span id="foot2">&copy;FastUniversal <sup>Peter Steel</sup></span>
+						<aside>
+							<span id="creator">Essa página foi desenvolvida por <span id="bio"><a href="#" target="_blank" >Diogo Alfredo Cabaça Umba</a></span></span>
+							<span>Poderá entrar em contacto comigo através das minhas <span id="contact"><a href="#" target="_blank" >redes sóciais</a></span> ou até ligar para o seguite contacto:<span id="contact"><a href="Dálcia.html" target="_blank">928 519 409</a></span> para eventuais serviços</span>
+						</aside>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
